@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-relay": "^1.4.1",
     "react-scripts": "1.1.0"
   },
   "scripts": {
@@ -12,9 +13,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update-schema": "babel-node ./scripts/updateSchema.js",
+    "lint": "eslint ./js",
+    "relay": "relay-compiler --src ./src --schema ./data/schema.graphql"
   },
   "devDependencies": {
-    "flow-bin": "^0.63.1"
+    "babel-plugin-relay": "^1.4.1",
+    "eslint-config-fbjs": "^2.0.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-relay": "^0.0.20",
+    "flow-bin": "^0.63.1",
+    "relay-compiler": "^1.4.1"
   }
 }
