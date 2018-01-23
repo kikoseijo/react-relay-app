@@ -3,17 +3,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejection its been integrated with [Flow](https://flow.org), [GraphQL](http://graphql.org) & [Relay](https://facebook.github.io/relay/).
 All tests during development been running against an API [Laravel Lumen](https://lumen.laravel.com) server .
 
-**_Server code_** its here: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
+**_Server code its here_**: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
 
 ### Install instructions
 
-```
-git clone git@github.com:kikoseijo/react-lumen-relay-client.git
-cd react-lumen-relay-client
-yarn install
-yarn run relay # `will generate the necessary files for "Relay Modern" to work.`*`
-```
+`git clone git@github.com:kikoseijo/react-lumen-relay-client.git`
+`cd react-lumen-relay-client`
+`yarn install`
+`yarn run relay` # will generate the necessary files for "**Relay Modern**" to work.
 
+```
 ### Available commands
 
 | Command     | Description                                                |
@@ -48,3 +47,4 @@ Sunnyface.com, is a software development company from Málaga, Spain. We provide
 ---
 
 <div dir=rtl markdown=1>Created by <b>Kiko Seijo</b></div>
+```
