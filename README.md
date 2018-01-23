@@ -1,10 +1,9 @@
-# React client application for Lumen
+# React client aplication for Lumen
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejected, added [Flow](React client application), [GraphQL](http://graphql.org) and [Relay](https://facebook.github.io/relay/).
+All implementation test been running against a Laravel Lumen API server.
 
-And ejected!!
-
-You can find the server code here: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
+Server code its here: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
 
 ### Install instructions
 
@@ -23,6 +22,13 @@ yarn start
 | yarn schema | Will download and parse file with relay-compiler           |
 | yarn relay  | Compiles GraphQL into \*\*\_\_generated\_\_\*\*            |
 | yarn pretty | It does pretty things, called when pushing code trough git |
+
+### Whats missing
+
+[] Integration with Laravel Passport
+[] Full CRUDs
+[] Integrate with Bootstrap v4
+[] ...
 
 ---
 
