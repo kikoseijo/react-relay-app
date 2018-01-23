@@ -36,7 +36,7 @@ All tests during development been running against an API [Laravel Lumen](https:/
 * [Kiko Seijo](http://kikoseijo.com 'Laravel, React, Vue, Mobile freelancer in Málaga')
 * [Diseño ideas](http://disenoideas.com 'Real estate website designer in Marbella')
 
-Sunnyface.com, is a software development company from Málaga, Spain. We provide quality software based on the cloud for local & international companies, providing technology solutions with the latest [programming languages](https://sunnyface.com/tecnologia/ 'Programador experto react y vue en Málaga').
+**Sunnyface.com**, is a software development company from **Málaga, Spain**. We provide quality software based on the cloud for local & international companies, providing technology solutions with the [most modern programming languages](https://sunnyface.com/tecnologia/ 'Programador experto react y vue en Málaga').
 
 [DevOps](https://sunnyface.com 'Programador ios málaga Marbella') Web development  
 [Custom App Development](https://gestorapp.com 'Gestor de aplicaciones moviles en málaga, mijas, marbella') Mobile aplications  
@@ -46,4 +46,3 @@ Sunnyface.com, is a software development company from Málaga, Spain. We provide
 ---
 
 <div dir=rtl markdown=1>Created by <b>Kiko Seijo</b></div>
-```
