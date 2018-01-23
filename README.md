@@ -12,7 +12,6 @@ All tests during development been running against an API [Laravel Lumen](https:/
 `yarn install`
 `yarn run relay` # will generate the necessary files for "**Relay Modern**" to work.
 
-```
 ### Available commands
 
 | Command     | Description                                                |
