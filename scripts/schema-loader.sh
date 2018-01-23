@@ -27,3 +27,4 @@
 rm ./schema.graphql
 get-graphql-schema http://altraser.dev/schema.json > ./schema.graphql
 echo "Schema succesfully saved to > ./schema.graphql"
+yarn run relay

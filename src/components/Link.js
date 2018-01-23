@@ -6,7 +6,7 @@ class Link extends Component {
     return (
       <div>
         <div>
-          {this.props.link.description} ({this.props.link.url})
+          {this.props.user.email} ({this.props.user.name})
         </div>
       </div>
     );
@@ -20,10 +20,10 @@ class Link extends Component {
 export default createFragmentContainer(
   Link,
   graphql`
-    fragment Link_link on Link {
+    fragment Link_user on User {
       id
-      description
-      url
+      name
+      email
     }
   `
 );

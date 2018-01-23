@@ -4,11 +4,12 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 class LinkList extends Component {
   render() {
+    console.log('this.props', this.props);
     return (
       <div>
-        {this.props.viewer.allLinks.edges.map(({ node }) => (
-          <Link key={node.__id} link={node} />
-        ))}
+        {this.props.users.map(node => {
+          return <Link key={node.__id} user={node} />;
+        })}
       </div>
     );
   }
@@ -17,15 +18,8 @@ class LinkList extends Component {
 export default createFragmentContainer(
   LinkList,
   graphql`
-    fragment LinkList_viewer on Viewer {
-      allLinks(last: 100, orderBy: createdAt_DESC)
-        @connection(key: "LinkList_allLinks", filters: []) {
-        edges {
-          node {
-            ...Link_link
-          }
-        }
-      }
+    fragment LinkList_users on User @relay(plural: true) {
+      ...Link_user
     }
   `
 );

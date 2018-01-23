@@ -1,44 +1,7 @@
-[ 'node' ]
-[ 'id' ]
-[ 'updateUserEmail' ]
-[ 'user', 'clientMutationId' ]
-[ 'id', 'name', 'email', 'password', 'admin' ]
-[ 'types',
-  'queryType',
-  'mutationType',
-  'subscriptionType',
-  'directives' ]
-[ 'kind',
-  'name',
-  'description',
-  'fields',
-  'interfaces',
-  'possibleTypes',
-  'enumValues',
-  'inputFields',
-  'ofType' ]
-[ 'name',
-  'description',
-  'args',
-  'type',
-  'isDeprecated',
-  'deprecationReason' ]
-[ 'name', 'description', 'type', 'defaultValue' ]
-[ 'name', 'description', 'isDeprecated', 'deprecationReason' ]
-[ 'name',
-  'description',
-  'locations',
-  'args',
-  'onOperation',
-  'onFragment',
-  'onField' ]
-[ 'hasNextPage', 'hasPreviousPage', 'startCursor', 'endCursor' ]
-[ 'id' ]
-[ 'total', 'edges', 'pageInfo' ]
-[ 'cursor', 'node' ]
 type Mutation {
   # A mutation
   updateUserEmail(id: String, email: String): UpdateUserEmailPayload
+  updateUser(id: Int!, name: String!): User
 }
 
 # The relay node interface
@@ -73,8 +36,8 @@ type PhotosConnection {
 }
 
 type Query {
-  # A query
-  node(id: ID!): Node
+  # A query to retrieve users form db
+  users(id: String, name: String, email: String): [User]
 }
 
 # A relay mutation input type
@@ -111,4 +74,3 @@ type User implements Node {
   # User level access
   admin: Boolean
 }
-
