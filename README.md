@@ -14,20 +14,20 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 ### Available commands
 
-| Command     | Description                                                |
+| Commands    | Descriptions                                               |
 | :---------- | :--------------------------------------------------------- |
 | yarn start  | starts application for development                         |
 | yarn build  | build application for production                           |
 | yarn schema | Will download and parse file with relay-compiler           |
-| yarn relay  | Compiles GraphQL into \_\_generated\_\_\ folders           |
+| yarn relay  | Compiles GraphQL into \_\_generated\_\_ folders            |
 | yarn pretty | It does pretty things, called when pushing code trough git |
 
 ### Whats missing
 
-[] Integration with Laravel Passport
-[] Full CRUDs
-[] Integrate with Bootstrap v4
-[] ...
+* [ ] Integration with Laravel Passport
+* [ ] Full CRUDs
+* [ ] Integrate with Bootstrap v4
+* [ ] ...
 
 ---
 
