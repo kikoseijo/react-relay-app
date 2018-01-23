@@ -1,4 +1,4 @@
-# React client aplication for Lumen
+# React client application + Relay Modern
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejection its been integrated with [Flow](https://flow.org), [GraphQL](http://graphql.org) & [Relay](https://facebook.github.io/relay/).
 All tests during development been running against an API [Laravel Lumen](https://lumen.laravel.com) server .
