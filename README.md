@@ -1,7 +1,7 @@
 # React client aplication for Lumen
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejected, added [Flow](React client application), [GraphQL](http://graphql.org) and [Relay](https://facebook.github.io/relay/).
-All implementation test been running against a Laravel Lumen API server.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejection its been integrated with [Flow](React client application), [GraphQL](http://graphql.org) & [Relay](https://facebook.github.io/relay/).
+All tests during development been running against a [Laravel Lumen](https://lumen.laravel.com) for serving data.
 
 Server code its here: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
 
