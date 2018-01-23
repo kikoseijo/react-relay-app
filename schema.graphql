@@ -1,0 +1,114 @@
+[ 'node' ]
+[ 'id' ]
+[ 'updateUserEmail' ]
+[ 'user', 'clientMutationId' ]
+[ 'id', 'name', 'email', 'password', 'admin' ]
+[ 'types',
+  'queryType',
+  'mutationType',
+  'subscriptionType',
+  'directives' ]
+[ 'kind',
+  'name',
+  'description',
+  'fields',
+  'interfaces',
+  'possibleTypes',
+  'enumValues',
+  'inputFields',
+  'ofType' ]
+[ 'name',
+  'description',
+  'args',
+  'type',
+  'isDeprecated',
+  'deprecationReason' ]
+[ 'name', 'description', 'type', 'defaultValue' ]
+[ 'name', 'description', 'isDeprecated', 'deprecationReason' ]
+[ 'name',
+  'description',
+  'locations',
+  'args',
+  'onOperation',
+  'onFragment',
+  'onField' ]
+[ 'hasNextPage', 'hasPreviousPage', 'startCursor', 'endCursor' ]
+[ 'id' ]
+[ 'total', 'edges', 'pageInfo' ]
+[ 'cursor', 'node' ]
+type Mutation {
+  # A mutation
+  updateUserEmail(id: String, email: String): UpdateUserEmailPayload
+}
+
+# The relay node interface
+interface Node {
+  id: ID!
+}
+
+# The relay pageInfo type used by connections
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+# A relay node type
+type Photo implements Node {
+  # A relay node id field
+  id: ID!
+}
+
+type PhotoEdge {
+  cursor: ID!
+  node: Photo
+}
+
+# A relay connection type
+type PhotosConnection {
+  total: Int
+  edges: [PhotoEdge]
+  pageInfo: PageInfo
+}
+
+type Query {
+  # A query
+  node(id: ID!): Node
+}
+
+# A relay mutation input type
+input UpdateUserEmailInput {
+  # The id field
+  id: ID!
+
+  # The email field
+  email: String
+  clientMutationId: String!
+}
+
+# A relay mutation payload type
+type UpdateUserEmailPayload {
+  # The user type
+  user: User
+  clientMutationId: String!
+}
+
+# A relay node type
+type User implements Node {
+  # A relay node id field
+  id: ID!
+
+  # The name of user
+  name: String!
+
+  # The email of user
+  email: String!
+
+  # The password of the user
+  password: String!
+
+  # User level access
+  admin: Boolean
+}
+
