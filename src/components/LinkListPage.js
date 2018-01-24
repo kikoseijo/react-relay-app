@@ -5,8 +5,6 @@ import LinkList from './LinkList';
 
 const LinkListPageQuery = graphql`
   query LinkListPageQuery {
-    id
-    name
     users {
       ...LinkList_users
     }

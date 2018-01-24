@@ -57,7 +57,7 @@ type UpdateUserEmailPayload {
   clientMutationId: String!
 }
 
-# A relay node type
+# A relay node type for User
 type User implements Node {
   # A relay node id field
   id: ID!

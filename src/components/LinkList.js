@@ -19,6 +19,7 @@ export default createFragmentContainer(
   LinkList,
   graphql`
     fragment LinkList_users on User @relay(plural: true) {
+      id
       ...Link_user
     }
   `
