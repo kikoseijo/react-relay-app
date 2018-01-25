@@ -20,11 +20,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE
 
-# find js -name '*.png' -exec pngcrush -ow {} \;
-
-# rm ./data/schema.json
-# cp -R /Users/smac/Developer/Lumen/altraser/resources/graphql/schema.json ./data/schema.json
-rm ./schema.graphql
-get-graphql-schema http://altraser.dev/schema.json > ./schema.graphql
-echo "Schema succesfully saved to > ./schema.graphql"
-yarn run relay
+# download schema from remote server using graphql-cli
+graphql get-schema
+# compile it!!
+relay-compiler --src ./src --schema ./schema.graphql

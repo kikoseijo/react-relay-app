@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
 
   "env": {
+    "browser": true,
     "es6": true,
     "jasmine": true,
   },
@@ -14,6 +15,7 @@
   "globals": {
     "__DEV__": true,
     "URL": true,
+    "localStorage": true,
     "__dirname": false,
     "__fbBatchedBridgeConfig": false,
     "alert": false,

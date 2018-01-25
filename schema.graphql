@@ -1,15 +1,30 @@
-type Mutation {
-  # A mutation
-  updateUserEmail(id: String, email: String): UpdateUserEmailPayload
-  updateUser(id: Int!, name: String!): User
+# source: http://altraser.dev/graphql
+# timestamp: Thu Jan 25 2018 02:19:53 GMT+0100 (CET)
+
+input LoginInput {
+  email: String!
+  password: String!
+  clientMutationId: String!
 }
 
-# The relay node interface
+type LoginPayload {
+  user: User
+  token: String!
+  clientMutationId: String!
+}
+
+type Mutation {
+  login(email: String!, password: String!): LoginPayload
+  signupUser(name: String, password: String, email: String): RegisterPayload
+  updateUserEmail(id: String, email: String): UpdateUserEmailPayload
+}
+
+"""The relay node interface"""
 interface Node {
   id: ID!
 }
 
-# The relay pageInfo type used by connections
+"""The relay pageInfo type used by connections"""
 type PageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
@@ -17,9 +32,8 @@ type PageInfo {
   endCursor: String
 }
 
-# A relay node type
 type Photo implements Node {
-  # A relay node id field
+  """A relay node id field"""
   id: ID!
 }
 
@@ -28,7 +42,6 @@ type PhotoEdge {
   node: Photo
 }
 
-# A relay connection type
 type PhotosConnection {
   total: Int
   edges: [PhotoEdge]
@@ -36,41 +49,43 @@ type PhotosConnection {
 }
 
 type Query {
-  # A query to retrieve users form db
   users(id: String, name: String, email: String): [User]
+
+  """Get the current logged in user"""
+  viewer: User
 }
 
-# A relay mutation input type
-input UpdateUserEmailInput {
-  # The id field
-  id: ID!
-
-  # The email field
-  email: String
+input RegisterInput {
+  name: String!
+  email: String!
+  id: String!
   clientMutationId: String!
 }
 
-# A relay mutation payload type
+type RegisterPayload {
+  token: String!
+  id: ID!
+  clientMutationId: String!
+}
+
+input UpdateUserEmailInput {
+  id: ID!
+  email: String!
+  clientMutationId: String!
+}
+
 type UpdateUserEmailPayload {
-  # The user type
+  """The user type"""
   user: User
   clientMutationId: String!
 }
 
-# A relay node type for User
 type User implements Node {
-  # A relay node id field
+  """A relay node id field"""
   id: ID!
-
-  # The name of user
   name: String!
-
-  # The email of user
   email: String!
-
-  # The password of the user
+  token: String
   password: String!
-
-  # User level access
   admin: Boolean
 }
