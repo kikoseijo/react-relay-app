@@ -24,9 +24,9 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 ### Whats missing
 
-* [ ] Integration with Laravel Passport
+* [x] Integration with Laravel Passport
 * [ ] Full CRUDs
-* [ ] Integrate with Bootstrap v4
+* [x] Integrate with Bootstrap v4
 * [ ] ...
 
 ---
