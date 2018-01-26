@@ -9,10 +9,12 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 ### Install instructions
 
-`git clone git@github.com:kikoseijo/react-lumen-relay-client.git`  
-`cd react-lumen-relay-client`  
-`yarn install`  
-`yarn run relay` # will generate the necessary files for "**Relay Modern**" to work.
+```sh
+git clone git@github.com:kikoseijo/react-lumen-relay-client.git
+cd react-lumen-relay-client
+yarn install
+yarn run relay # will generate the necessary files for "**Relay Modern**" to work.
+```
 
 ### Libraries
 
