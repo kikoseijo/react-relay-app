@@ -5,6 +5,8 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 **_Server code its here_**: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
 
+[VISIT THE APP DEMO SITE](https://kikoseijo.github.io/react-lumen-relay-client/)
+
 ### Install instructions
 
 `git clone git@github.com:kikoseijo/react-lumen-relay-client.git`  
