@@ -3,6 +3,10 @@ import { SubscriptionClient } from 'subscriptions-transport-ws';
 
 import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
+// For development.
+const { installRelayDevTools } = require('relay-devtools');
+installRelayDevTools();
+
 function fetchQuery(operation, variables) {
   return fetch('http://altraser.dev/graphql', {
     method: 'POST',

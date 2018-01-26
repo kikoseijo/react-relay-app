@@ -45,6 +45,11 @@ yarn run relay # will generate the necessary files for "**Relay Modern**" to wor
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 * [FontAwesome](https://github.com/FortAwesome/react-fontawesome)
 
+#### Development libraries
+
+* [GraphQL playground](https://github.com/graphcool/graphql-playground)
+* [relay-devtools](https://www.npmjs.com/package/relay-devtools)
+
 ### Available commands
 
 You can use `npm` or `yarn`, its your choice.
@@ -66,6 +71,7 @@ This is what i consider the minimum features this package should have to help yo
 * [x] Integration with Laravel Lumen
 * [x] Token based Auth using Laravel Passport
 * [ ] Full CRUDs
+* [ ] Relay Store
 * [x] Integration Bootstrap v4
 * [ ] ...
 
