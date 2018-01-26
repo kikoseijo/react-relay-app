@@ -5,7 +5,7 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 **_Server code its here_**: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
 
-[VISIT THE APP DEMO SITE](https://kikoseijo.github.io/react-lumen-relay-client/)
+[**_VISIT THE APP DEMO SITE_**](https://kikoseijo.github.io/react-lumen-relay-client/)
 
 ### Install instructions
 
@@ -23,7 +23,7 @@ yarn run relay # will generate the necessary files for "**Relay Modern**" to wor
 * [Bootstrap 4](https://getbootstrap.com)
 * [Reactstap](https://reactstrap.github.io)
 
-## Others
+#### Others
 
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
