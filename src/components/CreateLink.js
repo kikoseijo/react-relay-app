@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Container, Button, Col, FormGroup, Label, Input } from 'reactstrap';
+
 // import CreateLinkMutation from '../mutations/CreateLinkMutation';
 import { GC_USER_ID } from '../constants/constants';
 
@@ -10,49 +12,45 @@ class CreateLink extends Component {
 
   render() {
     return (
-      <div>
-        <div className="flex flex-column mt3">
-          <input
-            className="mb2"
-            value={this.state.description}
-            onChange={e => this.setState({ description: e.target.value })}
-            type="text"
-            placeholder="A description for the link"
-          />
-          <input
-            className="mb2"
-            value={this.state.url}
-            onChange={e => this.setState({ url: e.target.value })}
-            type="text"
-            placeholder="The URL for the link"
-          />
-        </div>
-        <div className="button" onClick={() => this._createLink()}>
-          submit
-        </div>
-
-        <p className="text-muted">
-          Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-        </p>
-        <p className="text-primary">
-          Nullam id dolor id nibh ultricies vehicula ut id elit.
-        </p>
-        <p className="text-success">
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </p>
-        <p className="text-info">
-          Maecenas sed diam eget risus varius blandit sit amet non magna.
-        </p>
-        <p className="text-warning">
-          Etiam porta sem malesuada magna mollis euismod.
-        </p>
-        <p className="text-danger">
-          Donec ullamcorper nulla non metus auctor fringilla.
-        </p>
-        <p className="text-white">
-          Etiam porta sem malesuada ultricies vehicula.
-        </p>
-      </div>
+      <section className="section bg-light">
+        <Container>
+          <h2>
+            Relay example -
+            <small className="text-muted">mutation</small>
+          </h2>
+          <p className="lead">
+            This example shows you how to make a mutation using GraphQL Relay
+            Modern
+          </p>
+          <Col sm={{ size: 8, offset: 2 }} className="pt-4 pb-5">
+            <FormGroup>
+              <Label for="exampleEmail">Link description</Label>
+              <Input
+                value={this.state.description}
+                onChange={e => this.setState({ description: e.target.value })}
+                placeholder="A description for the link"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="exampleEmail">Link URL</Label>
+              <Input
+                value={this.state.url}
+                onChange={e => this.setState({ url: e.target.value })}
+                placeholder="The URL for the link"
+              />
+            </FormGroup>
+            <div className="text-center pt-3">
+              <Button
+                color="primary"
+                size="lg"
+                onClick={() => this._createLink()}
+              >
+                Create new link record
+              </Button>
+            </div>
+          </Col>
+        </Container>
+      </section>
     );
   }
 

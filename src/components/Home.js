@@ -6,8 +6,8 @@ export default class Home extends Component {
     return (
       <div>
         <Jumbotron />
-        <div class="album py-5 bg-light">
-          <div class="container">IM the body of the home.</div>
+        <div className="album py-5 bg-light">
+          <div className="container">IM the body of the home.</div>
         </div>
       </div>
     );

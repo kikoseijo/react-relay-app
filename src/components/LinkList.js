@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import Link from './Link';
+import { ListGroup } from 'reactstrap';
 import { createFragmentContainer, graphql } from 'react-relay';
+
+import Link from './Link';
 
 class LinkList extends Component {
   render() {
     console.log('this.props', this.props);
     return (
-      <div>
+      <ListGroup className="pt-4 pb-5">
         {this.props.users.map(node => {
           return <Link key={node.__id} user={node} />;
         })}
-      </div>
+      </ListGroup>
     );
   }
 }

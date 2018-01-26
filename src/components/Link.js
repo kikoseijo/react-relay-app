@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import { ListGroupItem } from 'reactstrap';
+
 import { createFragmentContainer, graphql } from 'react-relay';
 
 class Link extends Component {
   render() {
     return (
-      <div>
-        <div>
-          {this.props.user.email} ({this.props.user.name})
-        </div>
-      </div>
+      <ListGroupItem>
+        {this.props.user.email} ({this.props.user.name})
+      </ListGroupItem>
     );
   }
 

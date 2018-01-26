@@ -7,10 +7,21 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 ### Install instructions
 
-`git clone git@github.com:kikoseijo/react-lumen-relay-client.git`
-`cd react-lumen-relay-client`
-`yarn install`
+`git clone git@github.com:kikoseijo/react-lumen-relay-client.git`  
+`cd react-lumen-relay-client`  
+`yarn install`  
 `yarn run relay` # will generate the necessary files for "**Relay Modern**" to work.
+
+### Libraries
+
+[React](https://reactjs.org)
+[GraphQL + Relay](https://facebook.github.io/relay/)
+[Bootstrap 4](https://getbootstrap.com)
+[Reactstap](https://reactstrap.github.io)
+
+Others
+
+[react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
 ### Available commands
 
@@ -24,9 +35,10 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 ### Whats missing
 
-* [x] Integration with Laravel Passport
+* [x] Integration with Laravel Lumen
+* [x] Token based Auth using Laravel Passport
 * [ ] Full CRUDs
-* [x] Integrate with Bootstrap v4
+* [x] Integration Bootstrap v4
 * [ ] ...
 
 ---

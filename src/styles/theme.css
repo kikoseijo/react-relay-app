@@ -27,6 +27,11 @@
   max-width: 40rem;
 }
 
+.section {
+  padding-top: 3.2rem;
+  padding-bottom: 4.2rem;
+}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
