@@ -18,14 +18,14 @@ yarn run relay # will generate the necessary files for "**Relay Modern**" to wor
 
 ### Libraries
 
-[React](https://reactjs.org)
-[GraphQL + Relay](https://facebook.github.io/relay/)
-[Bootstrap 4](https://getbootstrap.com)
-[Reactstap](https://reactstrap.github.io)
+* [React](https://reactjs.org)
+* [GraphQL + Relay](https://facebook.github.io/relay/)
+* [Bootstrap 4](https://getbootstrap.com)
+* [Reactstap](https://reactstrap.github.io)
 
-Others
+## Others
 
-[react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+* [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
 ### Available commands
 
@@ -37,7 +37,7 @@ Others
 | yarn relay  | Compiles GraphQL into \_\_generated\_\_ folders            |
 | yarn pretty | It does pretty things, called when pushing code trough git |
 
-### Whats missing
+### Todo
 
 * [x] Integration with Laravel Lumen
 * [x] Token based Auth using Laravel Passport
