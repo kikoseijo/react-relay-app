@@ -12,7 +12,7 @@ import Login from './Login';
 // Relay examples
 import CreateLink from './CreateLink';
 import LinkListPage from './LinkListPage';
-import TodoApp from './Todo';
+import TodoExamplePage from './TodoExamplePage';
 
 class App extends Component {
   render() {
@@ -23,11 +23,15 @@ class App extends Component {
           <Switch>
             <Route exact path="/react-relay-app" component={Home} />
 
-            <Route exact path="/react-relay-app/todo" component={TodoApp} />
             <Route
               exact
-              path="/react-relay-app/example2"
-              component={PageExample2}
+              path="/react-relay-app/todo"
+              component={TodoExamplePage}
+            />
+            <Route
+              exact
+              path="/react-relay-app/example1"
+              component={PageExample1}
             />
             <Route
               exact

@@ -20,4 +20,5 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE
 
+# find ./ -name '.DS_STORE' -exec echo {} \;
 ./node_modules/.bin/prettier --single-quote --write "src/**/*.{js,jsx,json,css}"

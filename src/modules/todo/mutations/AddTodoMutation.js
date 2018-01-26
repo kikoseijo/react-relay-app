@@ -52,6 +52,7 @@ function commit(environment, text, user) {
     },
     updater: store => {
       const payload = store.getRootField('addTodo');
+      console.log('payload', payload);
       const newEdge = payload.getLinkedRecord('todoEdge');
       sharedUpdater(store, user, newEdge);
     },

@@ -7,13 +7,16 @@ import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 const { installRelayDevTools } = require('relay-devtools');
 installRelayDevTools();
 
+const authToken = localStorage.getItem(GC_AUTH_TOKEN);
+// console.log('authToken', authToken);
+
 function fetchQuery(operation, variables) {
   return fetch('http://altraser.dev/graphql', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem(GC_AUTH_TOKEN)}`
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({
       query: operation.text,

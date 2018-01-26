@@ -1,5 +1,28 @@
 # source: http://altraser.dev/graphql
-# timestamp: Thu Jan 25 2018 02:19:53 GMT+0100 (CET)
+# timestamp: Fri Jan 26 2018 20:58:12 GMT+0100 (CET)
+
+input AddTodoInput {
+  text: String!
+  clientMutationId: String!
+}
+
+type AddTodoPayload {
+  todoEdge: TodoEdge
+  viewer: User
+  clientMutationId: String!
+}
+
+input ChangeTodoStatusInput {
+  complete: Boolean!
+  id: ID!
+  clientMutationId: String!
+}
+
+type ChangeTodoStatusPayload {
+  todo: Todo
+  viewer: User
+  clientMutationId: String!
+}
 
 input LoginInput {
   email: String!
@@ -13,10 +36,27 @@ type LoginPayload {
   clientMutationId: String!
 }
 
+input MarkAllTodosInput {
+  complete: Boolean!
+  clientMutationId: String!
+}
+
+type MarkAllTodosPayload {
+  changedTodos: [Todo]
+  viewer: User
+  clientMutationId: String!
+}
+
 type Mutation {
   login(email: String!, password: String!): LoginPayload
   signupUser(name: String, password: String, email: String): RegisterPayload
   updateUserEmail(id: String, email: String): UpdateUserEmailPayload
+  addTodo(input: AddTodoInput!): AddTodoPayload
+  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload
+  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload
+  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload
+  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload
+  renameTodo(input: RenameTodoInput!): RenameTodoPayload
 }
 
 """The relay node interface"""
@@ -68,6 +108,56 @@ type RegisterPayload {
   clientMutationId: String!
 }
 
+input RemoveCompletedTodosInput {
+  clientMutationId: String!
+}
+
+type RemoveCompletedTodosPayload {
+  deletedTodoIds: [String]
+  viewer: User
+  clientMutationId: String!
+}
+
+input RemoveTodoInput {
+  id: ID!
+  clientMutationId: String!
+}
+
+type RemoveTodoPayload {
+  deletedTodoId: ID
+  viewer: User
+  clientMutationId: String!
+}
+
+input RenameTodoInput {
+  id: ID!
+  text: String!
+  clientMutationId: String!
+}
+
+type RenameTodoPayload {
+  todo: Todo
+  clientMutationId: String!
+}
+
+type Todo implements Node {
+  """A relay node id field"""
+  id: ID!
+  text: String
+  complete: Boolean
+}
+
+type TodoConnection {
+  total: Int
+  edges: [TodoEdge]
+  pageInfo: PageInfo
+}
+
+type TodoEdge {
+  cursor: ID!
+  node: Todo
+}
+
 input UpdateUserEmailInput {
   id: ID!
   email: String!
@@ -75,7 +165,6 @@ input UpdateUserEmailInput {
 }
 
 type UpdateUserEmailPayload {
-  """The user type"""
   user: User
   clientMutationId: String!
 }
@@ -88,4 +177,9 @@ type User implements Node {
   token: String
   password: String!
   admin: Boolean
+  totalCount: Int
+  completedCount: Int
+
+  """A field"""
+  todos(first: Int, last: Int, after: String, before: String, status: String): TodoConnection
 }

@@ -20,10 +20,12 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 class TodoApp extends React.Component {
   _handleTextInputSave = text => {
+    const { viewer } = this.props.viewer;
+    console.log('this.props.viewer', this.props.viewer);
     AddTodoMutation.commit(
       this.props.relay.environment,
       text,
-      this.props.viewer
+      ('user': viewer)
     );
   };
   render() {
