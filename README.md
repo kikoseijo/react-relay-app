@@ -7,12 +7,29 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 [**_VISIT THE APP DEMO SITE_**](https://kikoseijo.github.io/react-lumen-relay-client/)
 
-### Install instructions
+### Install
 
-```sh
+Clone or download the repo to your working environment-
+
+```
 git clone git@github.com:kikoseijo/react-lumen-relay-client.git
+```
+
+Using the console navigate to the project working root directory
+
+```
 cd react-lumen-relay-client
+```
+
+Install dependencies, you can use NPM or Yarn, its your choice-
+
+```
 yarn install
+```
+
+You will need a GraphQL server to work with, you can try the Lumen boilerplate that will respond to all the demo endpoints.
+
+```
 yarn run relay # will generate the necessary files for "**Relay Modern**" to work.
 ```
 
@@ -23,21 +40,28 @@ yarn run relay # will generate the necessary files for "**Relay Modern**" to wor
 * [Bootstrap 4](https://getbootstrap.com)
 * [Reactstap](https://reactstrap.github.io)
 
-#### Others
+#### Other libraries
 
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+* [FontAwesome](https://github.com/FortAwesome/react-fontawesome)
 
 ### Available commands
 
-| Commands    | Descriptions                                               |
-| :---------- | :--------------------------------------------------------- |
-| yarn start  | starts application for development                         |
-| yarn build  | build application for production                           |
-| yarn schema | Will download and parse file with relay-compiler           |
-| yarn relay  | Compiles GraphQL into \_\_generated\_\_ folders            |
-| yarn pretty | It does pretty things, called when pushing code trough git |
+You can use `npm` or `yarn`, its your choice.
+
+| Commands        | Descriptions                                                    |
+| :-------------- | :-------------------------------------------------------------- |
+| yarn start      | starts application under development environment                |
+| yarn build      | builds application ready for production                         |
+| yarn schema     | Will download db schema from configured server _.graphqlconfig_ |
+| yarn gen        | Generates compiled GraphQL to the \_\_generated\_\_ folders     |
+| yarn db         | `yarn schema` && `yarn gen` with a single command               |
+| yarn playground | GraphQL playground, on port 3003                                |
+| yarn pretty     | It does pretty things, called when pushing code trough git      |
 
 ### Todo
+
+This is what i consider the minimum features this package should have to help you start working with Relay.
 
 * [x] Integration with Laravel Lumen
 * [x] Token based Auth using Laravel Passport
