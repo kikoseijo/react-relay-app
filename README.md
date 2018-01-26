@@ -3,22 +3,22 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and after ejection its been integrated with [Flow](https://flow.org), [GraphQL](http://graphql.org) & [Relay](https://facebook.github.io/relay/).
 All tests during development been running against an API [Laravel Lumen](https://lumen.laravel.com) server .
 
-**_Server code its here_**: [React-Lumen-Boilerplate](https://github.com/kikoseijo/react-lumen-boilerplate)
+**_Server code its here_**: [React-Lumen-Boilerplate](https://github.com/kikoseijo/lumen-graphql-boilerplate)
 
-[**_VISIT THE APP DEMO SITE_**](https://kikoseijo.github.io/react-lumen-relay-client/)
+[**_VISIT THE APP DEMO SITE_**](https://kikoseijo.github.io/react-relay-app/)
 
 ### Install
 
 Clone or download the repo to your working environment-
 
 ```
-git clone git@github.com:kikoseijo/react-lumen-relay-client.git
+git clone git@github.com:kikoseijo/react-relay-app.git
 ```
 
 Using the console navigate to the project working root directory
 
 ```
-cd react-lumen-relay-client
+cd react-relay-app
 ```
 
 Install dependencies, you can use NPM or Yarn, its your choice-
@@ -27,7 +27,7 @@ Install dependencies, you can use NPM or Yarn, its your choice-
 yarn install
 ```
 
-You will need a GraphQL server to work with, you can try the Lumen boilerplate that will respond to all the demo endpoints.
+You will need a **_GraphQL_** server to work with, you can try the [Lumen boilerplate](https://github.com/kikoseijo/lumen-graphql-boilerplate) that will respond to all the demo endpoints.
 
 ```
 yarn run relay # will generate the necessary files for "**Relay Modern**" to work.

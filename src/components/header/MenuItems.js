@@ -15,10 +15,10 @@ function Link(props) {
 const MenuItems = props => {
   return (
     <Nav navbar className="mr-auto">
-      <Link url="/example1" linkt="Page 1" />
-      <Link url="/example2" linkt="Page 2" />
-      <Link url="/links" linkt="Links" />
-      <Link url="/create" linkt="Add Link" />
+      <Link url="/react-relay-app/example1" linkt="Page 1" />
+      <Link url="/react-relay-app/example2" linkt="Page 2" />
+      <Link url="/react-relay-app/links" linkt="Links" />
+      <Link url="/react-relay-app/create" linkt="Add Link" />
     </Nav>
   );
 };

@@ -35,12 +35,12 @@ const headerCallout = props => {
 
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to="/" className="text-white">
+                <Link to="/react-relay-app" className="text-white">
                   new
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to="/create" className="text-white">
+                <Link to="/react-relay-app/create" className="text-white">
                   submit
                 </Link>
               </NavItem>

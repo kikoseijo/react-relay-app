@@ -11,9 +11,7 @@ const FooterWrapper = () => {
         <p>
           Need help? <a href="http://sunnyface.com">Developer webpage</a> or
           read more in{' '}
-          <a href="https://github.com/kikoseijo/react-lumen-relay-client">
-            Github
-          </a>.
+          <a href="https://github.com/kikoseijo/react-relay-app">Github</a>.
         </p>
       </div>
     </footer>

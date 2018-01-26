@@ -50,7 +50,10 @@ class HeaderRoot extends React.Component {
           expand="md"
         >
           <Container className="d-flex justify-content-between">
-            <NavbarBrand href="/" className="m-auto brand-margin">
+            <NavbarBrand
+              href="/react-relay-app"
+              className="m-auto brand-margin"
+            >
               <Logo />
               <strong>React + GraphQL Relay</strong>
             </NavbarBrand>
@@ -72,7 +75,7 @@ class HeaderRoot extends React.Component {
                       logout
                     </a>
                   ) : (
-                    <Link to="/login" className="nav-link">
+                    <Link to="/react-relay-app/login" className="nav-link">
                       login
                     </Link>
                   )}
