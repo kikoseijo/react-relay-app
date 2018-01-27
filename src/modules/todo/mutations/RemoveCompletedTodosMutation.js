@@ -37,7 +37,7 @@ function commit(environment, todos, user) {
   return commitMutation(environment, {
     mutation,
     variables: {
-      variables: {}
+      input: {}
     },
     updater: store => {
       const payload = store.getRootField('removeCompletedTodos');
