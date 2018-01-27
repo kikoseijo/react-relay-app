@@ -14,17 +14,21 @@ import ChangeTodoStatusMutation from './mutations/ChangeTodoStatusMutation';
 import RemoveTodoMutation from './mutations/RemoveTodoMutation';
 import RenameTodoMutation from './mutations/RenameTodoMutation';
 import TextInput from '../../common/TextInput';
+import Switch from '../../common/Switch';
 
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import classnames from 'classnames';
+import { ListGroupItem, Row, Col } from 'reactstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/fontawesome-free-solid';
 
 class Todo extends React.Component {
   state = {
     isEditing: false
   };
   _handleCompleteChange = e => {
-    const complete = e.target.checked;
+    const complete = !e.target.checked;
     ChangeTodoStatusMutation.commit(
       this.props.relay.environment,
       complete,
@@ -77,26 +81,41 @@ class Todo extends React.Component {
   }
   render() {
     return (
-      <li
+      <ListGroupItem
         className={classnames({
           completed: this.props.todo.complete,
           editing: this.state.isEditing
         })}
       >
-        <div className="view">
-          <input
-            checked={this.props.todo.complete}
-            className="toggle"
-            onChange={this._handleCompleteChange}
-            type="checkbox"
-          />
-          <label onDoubleClick={this._handleLabelDoubleClick}>
-            {this.props.todo.text}
-          </label>
-          <button className="destroy" onClick={this._handleDestroyClick} />
-        </div>
-        {this.state.isEditing && this.renderTextInput()}
-      </li>
+        <Row className="">
+          <div style={{ flex: 0 }} className="pl-2">
+            <Switch
+              on={this.props.todo.complete}
+              onClick={this._handleCompleteChange}
+            />
+          </div>
+          <div style={{ flex: 5 }} className="pl-2 pr-2">
+            {this.state.isEditing ? (
+              this.renderTextInput()
+            ) : (
+              <label
+                class="todo-item-label"
+                onDoubleClick={this._handleLabelDoubleClick}
+              >
+                {this.props.todo.text}
+              </label>
+            )}
+          </div>
+          <div style={{ flex: 0 }} className="pr-2">
+            <button
+              className="destroy btn btn-danger btn-sm float-right"
+              onClick={this._handleDestroyClick}
+            >
+              <FontAwesomeIcon icon={faTrash} />
+            </button>
+          </div>
+        </Row>
+      </ListGroupItem>
     );
   }
 }

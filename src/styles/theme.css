@@ -1,6 +1,9 @@
 :root {
   --jumbotron-padding-y: 3rem;
 }
+body {
+  line-height: 1.72rem;
+}
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);

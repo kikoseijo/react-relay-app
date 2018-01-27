@@ -10,13 +10,14 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import React from 'react';
+import { createFragmentContainer, graphql } from 'react-relay';
+import { Row, Col, FormGroup, Label } from 'reactstrap';
+
 import AddTodoMutation from './mutations/AddTodoMutation';
 import TodoList from './TodoList';
 import TodoListFooter from './TodoListFooter';
 import TextInput from '../../common/TextInput';
-
-import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
 
 class TodoApp extends React.Component {
   _handleTextInputSave = text => {
@@ -29,38 +30,66 @@ class TodoApp extends React.Component {
   render() {
     const hasTodos = this.props.viewer.totalCount > 0;
     return (
-      <div>
-        <section className="todoapp">
-          <header className="header">
-            <h1>Todo</h1>
-            <TextInput
-              autoFocus={true}
-              className="new-todo"
-              onSave={this._handleTextInputSave}
-              placeholder="What needs to be done?"
-            />
-          </header>
-          <TodoList viewer={this.props.viewer} />
-          {hasTodos && (
-            <TodoListFooter
-              todos={this.props.viewer.todos}
-              viewer={this.props.viewer}
-            />
-          )}
-        </section>
-        <footer className="info">
-          <p>Double-click to edit a todo</p>
-          <p>
-            Created by the{' '}
-            <a href="https://facebook.github.io/relay/">Relay team</a>
-          </p>
-          <p>
-            Part of <a href="http://todomvc.com">TodoMVC</a>
-          </p>
-        </footer>
+      <div className="todoapp">
+        <h2>Things TODO</h2>
+        <p className="pt-2 pb-3">
+          Here you have a full <strong>CRUD</strong> example, you can{' '}
+          <strong>create, delete, update</strong>
+          status, and batch processing.<br />The source code has been ported
+          from{' '}
+          <a href="http://github.com/relayjs/relay-examples" target="_blank">
+            RelayJS examples
+          </a>
+          , you can download the <strong>backend code</strong> from{' '}
+          <a href="https://github.com/kikoseijo/lumen-graphql-boilerplate">
+            Github Repo
+          </a>
+        </p>
+        <hr />
+        <Row className="pt-2">
+          <Col sm="4">
+            <FormGroup>
+              <Label for="exampleEmail">Create new todo</Label>
+              <TextInput
+                autoFocus={true}
+                className="new-todo"
+                onSave={this._handleTextInputSave}
+                placeholder="What needs to be done?"
+              />
+            </FormGroup>
+            {hasTodos && (
+              <TodoListFooter
+                todos={this.props.viewer.todos}
+                viewer={this.props.viewer}
+              />
+            )}
+          </Col>
+          <Col sm="8">
+            <TodoList viewer={this.props.viewer} />
+          </Col>
+        </Row>
+        {renderTodoCredits()}
       </div>
     );
   }
+}
+
+function renderTodoCredits() {
+  return (
+    <div className="text-center pt-4 pb-5">
+      <em>
+        <strong>Author note</strong>: This code its been ported from an example
+        created by the{' '}
+        <a href="https://facebook.github.io/relay/" target="_blank">
+          Relay team
+        </a>
+        <br />Its part of{' '}
+        <a href="http://todomvc.com" target="_blank">
+          TodoMVC
+        </a>
+      </em>
+    </div>
+  );
 }
 
 export default createFragmentContainer(TodoApp, {

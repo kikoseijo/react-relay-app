@@ -3,6 +3,12 @@
   height: 80px;
 }
 
+.todoapp {
+}
+.todo-item-label {
+  display: block;
+  margin-left: 16px;
+}
 .brand-margin {
   padding-right: 20px;
 }

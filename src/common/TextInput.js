@@ -14,6 +14,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
+import { Input } from 'reactstrap';
+
 const ENTER_KEY_CODE = 13;
 const ESC_KEY_CODE = 27;
 
@@ -65,7 +67,7 @@ export default class TextInput extends React.Component {
   };
   render() {
     return (
-      <input
+      <Input
         className={this.props.className}
         onBlur={this._handleBlur}
         onChange={this._handleChange}
