@@ -7,6 +7,15 @@ All tests during development been running against an API [Laravel Lumen](https:/
 
 [**_VISIT THE APP DEMO SITE_**](https://kikoseijo.github.io/react-relay-app/)
 
+#### Notes:
+
+This isn´t a production package, its been built from scratch using minimum plugins, trying to avoid the hidden magic good packages provide, self teach getting hands dirty with code, hopefully will help others and will save you time learning GraphQL in a pure Relay Modern environment.
+
+* **_Todo CRUD_** its taken from [RelayJS-examples](https://github.com/relayjs/relay-examples), and lumen backend has been prepared to be able to serve the endpoints the Todo CRUD needs. Might not be the best approach but its a good way to see how both world work together.
+* **_The Auth_** uses `Laravel Passport` to generate tokens, based on the [Personal Access Tokens](https://laravel.com/docs/5.5/passport#personal-access-tokens) functionality Passport provides out of the box.
+* **_No fetch, no Axios_** this is a pure Relay example thus this has no need to use any other network framework.
+* **_No Redux_** as Relay has its own personal storage. _pending_
+
 ### Install
 
 Clone or download the repo to your working environment-
