@@ -20,12 +20,10 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 class TodoApp extends React.Component {
   _handleTextInputSave = text => {
-    const { viewer } = this.props.viewer;
-    console.log('this.props.viewer', this.props.viewer);
     AddTodoMutation.commit(
       this.props.relay.environment,
       text,
-      ('user': viewer)
+      this.props.viewer
     );
   };
   render() {
@@ -34,7 +32,7 @@ class TodoApp extends React.Component {
       <div>
         <section className="todoapp">
           <header className="header">
-            <h1>todos</h1>
+            <h1>Todo</h1>
             <TextInput
               autoFocus={true}
               className="new-todo"

@@ -1,50 +1,50 @@
 # source: http://altraser.dev/graphql
-# timestamp: Fri Jan 26 2018 20:58:12 GMT+0100 (CET)
+# timestamp: Sat Jan 27 2018 03:07:30 GMT+0100 (CET)
 
 input AddTodoInput {
   text: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type AddTodoPayload {
   todoEdge: TodoEdge
   viewer: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 input ChangeTodoStatusInput {
   complete: Boolean!
-  id: ID!
-  clientMutationId: String!
+  id: String!
+  clientMutationId: String
 }
 
 type ChangeTodoStatusPayload {
   todo: Todo
   viewer: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 input LoginInput {
   email: String!
   password: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type LoginPayload {
   user: User
   token: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 input MarkAllTodosInput {
   complete: Boolean!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type MarkAllTodosPayload {
   changedTodos: [Todo]
   viewer: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type Mutation {
@@ -99,45 +99,45 @@ input RegisterInput {
   name: String!
   email: String!
   id: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type RegisterPayload {
   token: String!
-  id: ID!
-  clientMutationId: String!
+  id: String!
+  clientMutationId: String
 }
 
 input RemoveCompletedTodosInput {
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type RemoveCompletedTodosPayload {
   deletedTodoIds: [String]
   viewer: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 input RemoveTodoInput {
-  id: ID!
-  clientMutationId: String!
+  id: String!
+  clientMutationId: String
 }
 
 type RemoveTodoPayload {
   deletedTodoId: ID
   viewer: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 input RenameTodoInput {
-  id: ID!
+  id: String!
   text: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type RenameTodoPayload {
   todo: Todo
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type Todo implements Node {
@@ -159,14 +159,14 @@ type TodoEdge {
 }
 
 input UpdateUserEmailInput {
-  id: ID!
+  id: String!
   email: String!
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type UpdateUserEmailPayload {
   user: User
-  clientMutationId: String!
+  clientMutationId: String
 }
 
 type User implements Node {

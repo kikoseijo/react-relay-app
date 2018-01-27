@@ -49,7 +49,7 @@ function commit(environment, complete, todo, user) {
   return commitMutation(environment, {
     mutation,
     variables: {
-      input: { complete, id: todo.id }
+      variables: { complete, id: todo.id }
     },
     optimisticResponse: getOptimisticResponse(complete, todo, user)
   });

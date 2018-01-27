@@ -36,6 +36,7 @@ const mutation = graphql`
 function sharedUpdater(store, user, newEdge) {
   const userProxy = store.get(user.id);
   const conn = ConnectionHandler.getConnection(userProxy, 'TodoList_todos');
+
   ConnectionHandler.insertEdgeAfter(conn, newEdge);
 }
 
@@ -47,13 +48,15 @@ function commit(environment, text, user) {
     variables: {
       input: {
         text,
-        clientMutationId: tempID++
+        clientMutationId: user.id
       }
     },
     updater: store => {
+      console.log('user', user);
       const payload = store.getRootField('addTodo');
       console.log('payload', payload);
       const newEdge = payload.getLinkedRecord('todoEdge');
+      console.log('newEdge', newEdge);
       sharedUpdater(store, user, newEdge);
     },
     optimisticUpdater: store => {
