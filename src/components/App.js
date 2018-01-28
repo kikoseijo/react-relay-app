@@ -21,8 +21,6 @@ class App extends Component {
         <Header />
         <main role="main">
           <Switch>
-            <Route path="/react-relay-app" component={Home} />
-
             <Route
               exact
               path="/react-relay-app/todo"
@@ -50,6 +48,7 @@ class App extends Component {
               path="/react-relay-app/create"
               component={CreateLink}
             />
+            <Route path="/react-relay-app" component={Home} />
           </Switch>
         </main>
         <FooterWrapper />
