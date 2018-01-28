@@ -16,7 +16,9 @@ import { ConnectionHandler } from 'relay-runtime';
 const mutation = graphql`
   mutation RemoveCompletedTodosMutation($input: RemoveCompletedTodosInput!) {
     removeCompletedTodos(input: $input) {
-      deletedTodoIds
+      deletedTodoIds {
+        id
+      }
       viewer {
         completedCount
         totalCount
@@ -41,7 +43,7 @@ function commit(environment, todos, user) {
     },
     updater: store => {
       const payload = store.getRootField('removeCompletedTodos');
-      sharedUpdater(store, user, payload.getValue('deletedTodoIds'));
+      sharedUpdater(store, user, payload.getValue('deletedTodos'));
     },
     optimisticUpdater: store => {
       if (todos && todos.edges) {

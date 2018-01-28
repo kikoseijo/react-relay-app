@@ -47,7 +47,7 @@ class HeaderRoot extends React.Component {
         <Navbar
           color="dark"
           className="navbar-dark navbar box-shadow"
-          expand="md"
+          expand="lg"
         >
           <Container className="d-flex justify-content-between">
             <NavbarBrand

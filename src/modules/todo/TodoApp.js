@@ -12,12 +12,11 @@
 
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { Row, Col, FormGroup, Label } from 'reactstrap';
 
 import AddTodoMutation from './mutations/AddTodoMutation';
 import TodoList from './TodoList';
 import TodoListFooter from './TodoListFooter';
-import TextInput from '../../common/TextInput';
+import TodoTextInput from '../../common/TextInput';
 
 class TodoApp extends React.Component {
   _handleTextInputSave = text => {
@@ -30,62 +29,62 @@ class TodoApp extends React.Component {
   render() {
     const hasTodos = this.props.viewer.totalCount > 0;
     return (
-      <div className="todoapp">
+      <div>
         <h2>Things TODO</h2>
-        <p className="pt-2 pb-3">
-          Here you have a full <strong>CRUD</strong> example, you can{' '}
-          <strong>create, delete, update</strong>
-          status, and batch processing.<br />The source code has been ported
-          from{' '}
-          <a href="http://github.com/relayjs/relay-examples" target="_blank">
-            RelayJS examples
-          </a>
-          , you can download the <strong>backend code</strong> from{' '}
-          <a href="https://github.com/kikoseijo/lumen-graphql-boilerplate">
-            Github Repo
-          </a>
-        </p>
-        <hr />
-        <Row className="pt-2">
-          <Col sm="4">
-            <FormGroup>
-              <Label for="exampleEmail">Create new todo</Label>
-              <TextInput
-                autoFocus={true}
-                className="new-todo"
-                onSave={this._handleTextInputSave}
-                placeholder="What needs to be done?"
-              />
-            </FormGroup>
-            {hasTodos && (
-              <TodoListFooter
-                todos={this.props.viewer.todos}
-                viewer={this.props.viewer}
-              />
-            )}
-          </Col>
-          <Col sm="8">
-            <TodoList viewer={this.props.viewer} />
-          </Col>
-        </Row>
-        {renderTodoCredits()}
+        {renderHeader()}
+
+        <section className="todoapp">
+          <header className="header">
+            <TodoTextInput
+              autoFocus={true}
+              className="new-todo"
+              onSave={this._handleTextInputSave}
+              placeholder="What needs to be done?"
+            />
+          </header>
+          <TodoList viewer={this.props.viewer} />
+          {hasTodos && (
+            <TodoListFooter
+              todos={this.props.viewer.todos}
+              viewer={this.props.viewer}
+            />
+          )}
+        </section>
+        <footer className="info">{renderCredits()}</footer>
       </div>
     );
   }
 }
 
-function renderTodoCredits() {
+function renderHeader() {
   return (
-    <div className="text-center pt-4 pb-5">
+    <p className="pt-2 pb-3 text-muted">
+      Here you have a full <strong>CRUD</strong> example, you can{' '}
+      <strong>create, delete, update</strong>
+      status, and batch processing.<br />The source code has been ported from{' '}
+      <a href="http://github.com/relayjs/relay-examples" target="_blank">
+        RelayJS examples
+      </a>
+      , you can download the <strong>backend code</strong> from{' '}
+      <a href="https://github.com/kikoseijo/lumen-graphql-boilerplate">
+        Github Repo
+      </a>
+    </p>
+  );
+}
+
+function renderCredits() {
+  return (
+    <div className="credits text-center pt-4 pb-5">
       <em>
         <strong>Author note</strong>: This code its been ported from an example
         created by the{' '}
         <a href="https://facebook.github.io/relay/" target="_blank">
-          Relay team
+          <strong>Relay team</strong>
         </a>
         <br />Its part of{' '}
         <a href="http://todomvc.com" target="_blank">
-          TodoMVC
+          <strong>TodoMVC</strong>
         </a>
       </em>
     </div>

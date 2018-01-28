@@ -1,5 +1,5 @@
 # source: http://altraser.dev/graphql
-# timestamp: Sat Jan 27 2018 12:37:59 GMT+0100 (CET)
+# timestamp: Sun Jan 28 2018 00:38:27 GMT+0100 (CET)
 
 input AddTodoInput {
   text: String!
@@ -113,7 +113,7 @@ input RemoveCompletedTodosInput {
 }
 
 type RemoveCompletedTodosPayload {
-  deletedTodoIds: [String]
+  deletedTodoIds: [Todo]
   viewer: User
   clientMutationId: String
 }

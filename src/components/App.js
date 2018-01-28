@@ -21,7 +21,7 @@ class App extends Component {
         <Header />
         <main role="main">
           <Switch>
-            <Route exact path="/react-relay-app" component={Home} />
+            <Route path="/react-relay-app" component={Home} />
 
             <Route
               exact

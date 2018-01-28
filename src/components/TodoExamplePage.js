@@ -5,6 +5,8 @@ import { Container } from 'reactstrap';
 import environment from '../constants/Environment';
 import TodoApp from '../modules/todo/TodoApp';
 
+import '../styles/todo.css';
+
 const TodoExamplePage = () => {
   return (
     <section className="section bg-light">

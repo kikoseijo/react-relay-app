@@ -38,7 +38,7 @@ function commit(environment, text, todo) {
   return commitMutation(environment, {
     mutation,
     variables: {
-      variables: { text, id: todo.id }
+      input: { text, id: todo.id }
     },
     optimisticResponse: getOptimisticResponse(text, todo)
   });

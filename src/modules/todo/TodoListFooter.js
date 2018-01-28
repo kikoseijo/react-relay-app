@@ -27,18 +27,22 @@ class TodoListFooter extends React.Component {
     const numCompletedTodos = this.props.viewer.completedCount;
     const numRemainingTodos = this.props.viewer.totalCount - numCompletedTodos;
     return (
-      <div className="pb-4 text-center">
-        <br />
+      <footer className="footer">
+        <span className="todo-count">
+          <strong>{numRemainingTodos}</strong> item{numRemainingTodos === 1
+            ? ''
+            : 's'}{' '}
+          left
+        </span>
         {numCompletedTodos > 0 && (
           <button
-            className="btn btn-primary btn-lg"
+            className="clear-completed"
             onClick={this._handleRemoveCompletedTodosClick}
           >
             Clear completed
           </button>
         )}
-        <div className="clearfix" />
-      </div>
+      </footer>
     );
   }
 }

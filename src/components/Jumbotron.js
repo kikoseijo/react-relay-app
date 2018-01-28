@@ -1,21 +1,33 @@
 import React from 'react';
-import { Jumbotron, Button, Container } from 'reactstrap';
+import { Jumbotron, Container } from 'reactstrap';
 
 const JumbotronExample = props => {
   return (
     <Jumbotron className="jumbotron text-center">
       <Container>
-        <h1 className="jumbotron-heading">Album example</h1>
+        <h1 className="jumbotron-heading">React + Relay Modern</h1>
         <p className="lead text-muted">
-          Something short and leading about the collection below—its contents,
-          the creator, etc. Make it short and sweet, but not too short so folks
-          don't simply skip over it entirely.
+          This is a <strong>Demo Boilerplate</strong>, you are free to download
+          and contribute, its one of the several, but not so many, demo
+          applications around, it should allow you to get started with{' '}
+          <strong>React + Relay Modern</strong>
         </p>
-        <hr className="my-2" />
 
-        <p className="lead">
-          <Button color="primary">Learn More</Button>&nbsp; &nbsp;
-          <Button color="secondary">Learn More</Button>
+        <p className="lead pt-4">
+          <a
+            className="btn btn-primary"
+            href="https://github.com/kikoseijo/react-relay-app"
+            target="_blank"
+          >
+            React Client
+          </a>&nbsp; &nbsp;
+          <a
+            className="btn btn-primary"
+            href="https://github.com/kikoseijo/lumen-graphql-boilerplate"
+            target="_blank"
+          >
+            Lumen Backend
+          </a>
         </p>
       </Container>
     </Jumbotron>

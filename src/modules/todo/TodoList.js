@@ -12,7 +12,6 @@
 
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { ListGroup, Input, Row, Col } from 'reactstrap';
 
 import MarkAllTodosMutation from './mutations/MarkAllTodosMutation';
 import Todo from './Todo';
@@ -35,26 +34,17 @@ class TodoList extends React.Component {
   render() {
     const numTodos = this.props.viewer.totalCount;
     const numCompletedTodos = this.props.viewer.completedCount;
-    const numRemainingTodos = this.props.viewer.totalCount - numCompletedTodos;
     return (
-      <div>
-        <div className="float-left">
-          <strong>{numRemainingTodos}</strong> item{numRemainingTodos === 1
-            ? ''
-            : 's'}{' '}
-          left, <em>Double-click to edit a todo</em>
-        </div>
-        <div className="float-right">
-          <Input
-            checked={numTodos === numCompletedTodos}
-            onChange={this._handleMarkAllChange}
-            type="checkbox"
-          />
-          <label htmlFor="toggle-all">Mark all as complete</label>
-        </div>
-        <div className="clearfix" />
-        <ListGroup>{this.renderTodos()}</ListGroup>
-      </div>
+      <section className="main">
+        <input
+          checked={numTodos === numCompletedTodos}
+          className="toggle-all"
+          onChange={this._handleMarkAllChange}
+          type="checkbox"
+        />
+        <label htmlFor="toggle-all">Mark all as complete</label>
+        <ul className="todo-list">{this.renderTodos()}</ul>
+      </section>
     );
   }
 }
