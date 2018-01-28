@@ -79,7 +79,7 @@ This is what i consider the minimum features this package should have to help yo
 
 * [x] Integration with Laravel Lumen
 * [x] Token based Auth using Laravel Passport
-* [ ] Full CRUDs
+* [x] Full CRUDs
 * [ ] Relay Store
 * [x] Integration Bootstrap v4
 * [ ] ...
