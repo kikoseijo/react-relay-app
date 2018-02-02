@@ -11,12 +11,12 @@ const authToken = localStorage.getItem(GC_AUTH_TOKEN);
 // console.log('authToken', authToken);
 
 function fetchQuery(operation, variables) {
-  return fetch('http://altraser.dev/graphql', {
+  return fetch('https://graphql.sunnyface.com/graphql', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
+      ...(authToken != null ? { Authorization: `Bearer ${authToken}` } : null)
     },
     body: JSON.stringify({
       query: operation.text,
