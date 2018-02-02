@@ -77,11 +77,15 @@ You can use `npm` or `yarn`, its your choice.
 
 This is what i consider the minimum features this package should have to help you start working with Relay.
 
-* [x] Integration with Laravel Lumen
-* [x] Token based Auth using Laravel Passport
+* [x] Integrate with Laravel Lumen using laravel-graphql
+* [x] Token based Auth with Laravel Passport
+* [x] Integrate Bootstrap v4, SASS
+* [x] Implement HashRouter for github pages
 * [x] Full CRUDs
-* [ ] Relay Store
-* [x] Integration Bootstrap v4
+* [ ] Optimize rendering user experience
+* [ ] Fix fake mutations on todo demo against server
+* [ ] Implement local & server form validation
+* [ ] Implement Relay paginations
 * [ ] ...
 
 ---

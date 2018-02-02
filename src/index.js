@@ -5,12 +5,13 @@ import './styles/App.css';
 import './styles/theme.css';
 import App from './components/App';
 import registerServiceWorker from './constants/registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
+
 registerServiceWorker();

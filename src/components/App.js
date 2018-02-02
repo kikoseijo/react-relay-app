@@ -21,34 +21,14 @@ class App extends Component {
         <Header />
         <main role="main">
           <Switch>
-            <Route
-              exact
-              path="/react-relay-app/todo"
-              component={TodoExamplePage}
-            />
-            <Route
-              exact
-              path="/react-relay-app/example1"
-              component={PageExample1}
-            />
-            <Route
-              exact
-              path="/react-relay-app/example2"
-              component={PageExample2}
-            />
+            <Route exact path="/todo" component={TodoExamplePage} />
+            <Route exact path="/example1" component={PageExample1} />
+            <Route exact path="/example2" component={PageExample2} />
 
-            <Route exact path="/react-relay-app/login" component={Login} />
-            <Route
-              exact
-              path="/react-relay-app/Links"
-              component={LinkListPage}
-            />
-            <Route
-              exact
-              path="/react-relay-app/create"
-              component={CreateLink}
-            />
-            <Route path="/react-relay-app" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/Links" component={LinkListPage} />
+            <Route exact path="/create" component={CreateLink} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
         <FooterWrapper />
